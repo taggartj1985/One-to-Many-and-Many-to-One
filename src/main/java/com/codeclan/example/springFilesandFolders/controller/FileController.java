@@ -22,8 +22,8 @@ public class FileController {
     }
 
     @GetMapping(value = "/files/{id}")
-    public ResponseEntity getFiles(@PathVariable Long id){
-        return new ResponseEntity<>(fileRepository.findById(id), HttpStatus.OK);
+    public ResponseEntity getFile(@PathVariable Long id) {
+        return new ResponseEntity(fileRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/files")
@@ -31,4 +31,15 @@ public class FileController {
         fileRepository.save(file);
         return new ResponseEntity<>(file, HttpStatus.CREATED);
     }
+
+    @DeleteMapping(value = "/files/{id}")
+    public void deleteById(@PathVariable Long id){
+        fileRepository.deleteById(id);
+    }
+
+//    @DeleteMapping(value = "/files/{id}")
+//    public void deleteFile(@PathVariable("id") Long id){
+//        fileRepository.deleteById(id);
+//    }
+
 }

@@ -20,8 +20,8 @@ public class UserController {
     }
 
     @GetMapping(value = "/users/{id}")
-    public ResponseEntity getFiles(@PathVariable Long id){
-        return new ResponseEntity<>(userRepository.findById(id), HttpStatus.OK);
+    public ResponseEntity getUser(@PathVariable Long id) {
+        return new ResponseEntity(userRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/users")

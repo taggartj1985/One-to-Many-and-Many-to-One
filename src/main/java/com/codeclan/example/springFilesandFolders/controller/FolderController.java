@@ -22,8 +22,8 @@ public class FolderController {
     }
 
     @GetMapping(value = "/folders/{id}")
-    public ResponseEntity getFolders(@PathVariable Long id){
-        return new ResponseEntity<>(folderRepository.findById(id), HttpStatus.OK);
+    public ResponseEntity getFolder(@PathVariable Long id) {
+        return new ResponseEntity(folderRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/folders")
@@ -31,4 +31,10 @@ public class FolderController {
         folderRepository.save(folder);
         return new ResponseEntity<>(folder, HttpStatus.CREATED);
     }
+
+    @DeleteMapping(value = "/folders/{id}")
+    public void deleteById(@PathVariable Long id){
+        folderRepository.deleteById(id);
+    }
+
 }
