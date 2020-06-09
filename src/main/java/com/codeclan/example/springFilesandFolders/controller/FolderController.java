@@ -1,5 +1,3 @@
-package com.codeclan.example.springFilesandFolders.controller;
-
 
 import com.codeclan.example.springFilesandFolders.models.Folder;
 import com.codeclan.example.springFilesandFolders.repository.FolderRepository;
@@ -23,7 +21,7 @@ public class FolderController {
 
     @GetMapping(value = "/folders/{id}")
     public ResponseEntity getFolder(@PathVariable Long id) {
-        return new ResponseEntity(folderRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(folderRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/folders")
