@@ -11,6 +11,7 @@ public class File {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
         @Column
         private String name;
@@ -68,5 +69,13 @@ public class File {
 
     public void setFolder(Folder folder) {
         this.folder = folder;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

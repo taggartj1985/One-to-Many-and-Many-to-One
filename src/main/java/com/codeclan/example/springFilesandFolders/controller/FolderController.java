@@ -1,3 +1,4 @@
+package com.codeclan.example.springFilesandFolders.controller;
 
 import com.codeclan.example.springFilesandFolders.models.Folder;
 import com.codeclan.example.springFilesandFolders.repository.FolderRepository;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class FolderController {
+public class FolderController{
 
     @Autowired
     FolderRepository folderRepository;
